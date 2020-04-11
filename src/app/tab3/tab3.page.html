@@ -1,17 +1,35 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title color="warning">My Shopping Cart</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content class="ion-padding">
+  <div class="container">
+    <div class="row ion-margin-top" *ngFor="let item of cartService.items">
+      <div class="col-5">
+        <ion-thumbnail>
+          <ion-img [src]="item.img"></ion-img>
+        </ion-thumbnail>
+      </div>
+      <div class="col">
+        <div>
+          <ion-label>{{item.title}}</ion-label>
+        </div>
+        <div>
+          <ion-note>${{item.price}}</ion-note> x <input type="number" placeholder="Qty" class="qty-input" (ngModelChange)="calculateTotal()" [(ngModel)]="item.qty">
+        </div>
+        <div>
+          <ion-icon name="trash-outline" color="danger"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar fixed-bottom">
+      <ion-item>
+        <span slot="start">Total: ${{totalAmount}}</span>
+          <ion-button color="primary" shape="round" slot="end">
+            <ion-icon name="pencil-outline"></ion-icon> Checkout
+          </ion-button>
+      </ion-item>
+    </nav>
+  </div>
 </ion-content>

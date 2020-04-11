@@ -1,17 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-header>
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+        <ion-title color="warning">Profile</ion-title>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
+<ion-content class="ion-padding">
+    <div class="image-container">
+        <img src="/assets/images/profile.png" class="rounded-circle img-responsive center-block" style="margin: auto" alt="Acme User">
+    </div>
+    <h4>Acme User</h4>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-list>
+        <ion-item>
+            <ion-label class="ion-text-wrap">
+                <ion-text>
+                    <h3>Phone</h3>
+                </ion-text>
+                <p>+923154379760</p>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label class="ion-text-wrap">
+                <ion-text>
+                    <h3>Emirates ID</h3>
+                </ion-text>
+                <p>6541-23-49790</p>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label class="ion-text-wrap">
+                <ion-text>
+                    <h3>Address</h3>
+                </ion-text>
+                <p>Lahore, Punjab, Pakistan</p>
+            </ion-label>
+        </ion-item>
+
+    </ion-list>
 </ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="ion-padding-start ion-padding-bottom page-header">
+    <ion-text color="warning">
+      <h1>Register</h1>
+    </ion-text>
+    <p>
+      Get yourself on board.
+    </p>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" class="ion-padding">
+    <ion-item class="highlight-color-invalid">
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input required="true" ngModel name="firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input required ngModel name="lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone</ion-label>
+      <ion-input required ngModel name="phone"></ion-input>
+    </ion-item>
+    <ion-button type="submit" color="warning" shape="round" class="ion-color-warning ion-margin-top" expand="block">
+      <ion-spinner class="ion-margin-end" *ngIf="wait"></ion-spinner> Register Me!
+    </ion-button>
+  </form>
+  <ion-button color="tertiary" fill="clear" size="small" class="alternate-action" routerLink="login">Login</ion-button>
+<!--    <form class="px-4 py-3">-->
+<!--      <div class="form-group">-->
+<!--        <label for="exampleDropdownFormEmail1">Email address</label>-->
+<!--        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label for="exampleDropdownFormPassword1">Password</label>-->
+<!--        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">-->
+<!--      </div>-->
+<!--      <div class="form-check">-->
+<!--        <input type="checkbox" class="form-check-input" id="dropdownCheck">-->
+<!--        <label class="form-check-label" for="dropdownCheck">-->
+<!--          Remember me-->
+<!--        </label>-->
+<!--      </div>-->
+<!--      <button type="submit" class="btn btn-primary">Sign in</button>-->
+<!--    </form>-->
+<!--    <div class="dropdown-divider"></div>-->
+<!--    <a class="dropdown-item" href="#">New around here? Sign up</a>-->
+<!--    <a class="dropdown-item" href="#">Forgot password?</a>-->
+</ion-content>

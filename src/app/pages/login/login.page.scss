@@ -1,0 +1,15 @@
+ion-header {
+  text-align: center;
+  background-color: #36096d;
+  background-image: linear-gradient(315deg, #37d5d6 0%, #36096d 74%);
+  color: white;
+  ion-icon {
+    font-size: 100px;
+  }
+}
+
+.alternate-action {
+  position: absolute;
+  left: 0;
+  right: 0;
+}

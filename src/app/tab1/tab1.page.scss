@@ -1,3 +1,20 @@
-ion-content ion-toolbar {
-  --background: translucent;
+* * {
+  text-align: center;
+}
+ion-chip {
+  position: absolute;
+  right: 0;
+}
+.image-container, .image-container img {
+  width: 100px;
+  height: 100px;
+}
+.image-container {
+  //margin-top: 20px;
+}
+.image-container img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
