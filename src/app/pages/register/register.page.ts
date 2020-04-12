@@ -33,7 +33,14 @@ export class RegisterPage implements OnInit {
     } else {
       this.wait = true;
       localStorage.setItem(registerForm.value.phone, JSON.stringify(registerForm.value));
-      setTimeout(() => {
+      setTimeout(async () => {
+        this.wait = false;
+        const alert = await this.alertController.create({
+          header: 'Success',
+          message: 'You are successfully registered.',
+          buttons: ['OK']
+        });
+        await alert.present();
         this.router.navigate(['login']);
       }, 2000);
     }

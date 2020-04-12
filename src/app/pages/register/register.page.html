@@ -22,9 +22,14 @@
       <ion-label position="floating">Phone</ion-label>
       <ion-input required ngModel name="phone"></ion-input>
     </ion-item>
-    <ion-button type="submit" color="warning" class="ion-color-warning ion-margin-top" expand="full">
-      <ion-spinner class="ion-margin-end" *ngIf="wait"></ion-spinner> Register Me!
-    </ion-button>
+    <button type="submit" class="btn btn-warning btn-block">
+      <span
+              *ngIf="wait"
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+      ></span> Register Me!
+    </button>
   </form>
   <ion-button color="tertiary" fill="clear" size="small" class="alternate-action" routerLink="/login">Login</ion-button>
 </ion-content>

@@ -32,8 +32,9 @@ export class LoginPage implements OnInit {
     } else {
       this.wait = true;
       localStorage.setItem(loginForm.value.phone, JSON.stringify(loginForm.value));
-      setTimeout(() => {
-        this.router.navigate(['home']);
+      setTimeout(async () => {
+        this.wait = false;
+        this.router.navigate(['welcome']);
       }, 1000);
     }
   }
