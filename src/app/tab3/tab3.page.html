@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title color="warning">My Shopping Cart</ion-title>
+    <ion-title color="warning">Cart</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
+  <div *ngIf="cartService.checkedOut" class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Order Placed!</h4>
+    <p>Your items will be delivered to your door step within 48 hours.</p>
+    <hr>
+    <p class="mb-0">In case of any problem or complain please contact us at +923154646530. Thank you.</p>
+  </div>
   <div class="container">
     <div class="row ion-margin-top" *ngFor="let item of cartService.items">
       <div class="col-5">
@@ -19,17 +25,13 @@
           <ion-note>${{item.price}}</ion-note> x <input type="number" placeholder="Qty" class="qty-input" (ngModelChange)="calculateTotal()" [(ngModel)]="item.qty">
         </div>
         <div>
-          <ion-icon name="trash-outline" color="danger"></ion-icon>
+          <ion-icon (click)="remove(item)" name="trash-outline" color="danger"></ion-icon>
         </div>
       </div>
     </div>
-    <nav class="navbar fixed-bottom">
-      <ion-item>
-        <span slot="start">Total: ${{totalAmount}}</span>
-          <ion-button color="primary" shape="round" slot="end">
-            <ion-icon name="pencil-outline"></ion-icon> Checkout
-          </ion-button>
-      </ion-item>
-    </nav>
+    <div class="navbar" *ngIf="cartService.items.length">
+      <strong>Total: ${{totalAmount}}</strong>
+      <button class="btn btn-success" (click)="checkout()"><ion-icon name="pencil-outline"></ion-icon> Checkout</button>
+    </div>
   </div>
 </ion-content>

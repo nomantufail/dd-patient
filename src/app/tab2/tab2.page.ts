@@ -15,7 +15,8 @@ export class Tab2Page {
     this.cartService.addItem(item);
   }
 
-  removeFromCart(item) {
+  removeFromCart(item: any) {
+    console.log(item);
     item.inCart = false;
     this.cartService.removeItem(item);
   }

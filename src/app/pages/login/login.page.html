@@ -14,9 +14,9 @@
       <ion-label position="floating">Password</ion-label>
       <ion-input required ngModel name="lastName" type="password"></ion-input>
     </ion-item>
-    <ion-button type="submit" color="warning" class="ion-color-warning ion-margin-top ion-activatable ripple-parent" shape="round" expand="block">
+    <button type="submit" class="btn btn-warning btn-lg btn-block">
       <ion-spinner class="ion-margin-end" *ngIf="wait"></ion-spinner> Login
-    </ion-button>
+    </button>
   </form>
-  <ion-button color="tertiary" fill="clear" size="small" class="alternate-action" routerLink="login">Register</ion-button>
+  <ion-button color="tertiary" fill="clear" size="small" class="alternate-action" routerLink="/register">Register</ion-button>
 </ion-content>

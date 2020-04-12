@@ -6,10 +6,12 @@ import {ProductsService} from './products.service';
 })
 export class CartService {
 
+  checkedOut = false;
   items: any[] = [];
   constructor(private productsService: ProductsService) { }
 
   addItem(item: any) {
+    this.checkedOut = false;
     item.qty = 1;
     this.items.push(item);
   }
@@ -20,6 +22,7 @@ export class CartService {
       if (product.id === item.id) {
         product.inCart = false;
       }
+      return product;
     });
   }
 }
